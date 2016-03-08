@@ -12,8 +12,8 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class BinarySearch {
 
-	//Êı×éarr±ØĞëÓĞĞò,´Ë´¦¼ÙÉèÁËÊÇ´ÓµÍµ½¸ßÅÅÁĞ
-	//¶ÔÓÚÊı×é,×¢Òâ·ÃÎÊÔ½½çÎÊÌâ,ÏÂ±êÖµ×î´óÎªarr.length-1
+	//æ•°ç»„arrå¿…é¡»æœ‰åº,æ­¤å¤„å‡è®¾äº†æ˜¯ä»ä½åˆ°é«˜æ’åˆ—
+	//å¯¹äºæ•°ç»„,æ³¨æ„è®¿é—®è¶Šç•Œé—®é¢˜,ä¸‹æ ‡å€¼æœ€å¤§ä¸ºarr.length-1
 	public static int rank(int key, int[] arr)
 	{
 		int lo = 0;
@@ -31,17 +31,17 @@ public class BinarySearch {
 		return -1;
 	}
 	
-	//¶ÔÓÚÊı×é,µ÷ÓÃÊ±×¢Òâ·ÃÎÊÔ½½çÎÊÌâ,hiÎªarr.length-1
-	//levelÓÃÓÚ¸ú×Ùµ÷ÓÃ¹ı³Ì
+	//å¯¹äºæ•°ç»„,è°ƒç”¨æ—¶æ³¨æ„è®¿é—®è¶Šç•Œé—®é¢˜,hiä¸ºarr.length-1
+	//levelç”¨äºè·Ÿè¸ªè°ƒç”¨è¿‡ç¨‹
 	public static int rankR(int key, int[] arr, int lo, int hi, int level)
 	{
-		//´òÓ¡µİ¹éµ÷ÓÃ¹ı³Ì
+		//æ‰“å°é€’å½’è°ƒç”¨è¿‡ç¨‹
 		String preStr = "";
 		for(int i = 0; i < level; ++i)
 			preStr += "\t";
 		StdOut.println(preStr + "lo: " + lo + " hi: " + hi);
 		
-		if(lo > hi)			//µİ¹éÖÕÖ¹Ìõ¼ş
+		if(lo > hi)			//é€’å½’ç»ˆæ­¢æ¡ä»¶
 			return -1;
 		int mid = lo + (hi - lo) / 2;
 		if(key < arr[mid])
@@ -58,17 +58,17 @@ public class BinarySearch {
 		int[] whiteList = In.readInts(args[0]);
 		Arrays.sort(whiteList);
 		
-		//´òÓ¡³öÅÅĞòºóµÄwhiteList
+		//æ‰“å°å‡ºæ’åºåçš„whiteList
 		for(int i = 0; i < whiteList.length; ++i)
 			StdOut.println(whiteList[i]);
 		StdOut.println("===================");
 		
 		while(!StdIn.isEmpty())
 		{
-			//¶ÁÈ¡¼üÖµ£¬²»ÔÚ°×Ãûµ¥ÄÚÔò´òÓ¡³öÀ´
+			//è¯»å–é”®å€¼ï¼Œä¸åœ¨ç™½åå•å†…åˆ™æ‰“å°å‡ºæ¥
 			int key = StdIn.readInt();
 			//if(rank(key, whiteList) < 0)
-			if(rankR(key, whiteList, 0, whiteList.length - 1, 0) < 0)		//µİ¹é·½·¨½øĞĞ¶ş·Ö²éÕÒ
+			if(rankR(key, whiteList, 0, whiteList.length - 1, 0) < 0)		//é€’å½’æ–¹æ³•è¿›è¡ŒäºŒåˆ†æŸ¥æ‰¾
 			{
 				StdOut.println(key);
 			}
