@@ -5,7 +5,7 @@
  ******************************************************************************/
 public class Gcd
 {
-	//求p,q的最大公约数,p和q顺序任意
+	//姹俻,q鐨勬渶澶у叕绾︽暟,p鍜宷椤哄簭浠绘剰
 	public static int gcd(int p, int q)
 	{
 		System.out.println( p + "\t" + q );	
