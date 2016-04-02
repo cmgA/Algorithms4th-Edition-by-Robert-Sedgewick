@@ -5,7 +5,7 @@
  ******************************************************************************/
 public class IntegerToBinaryString
 {
-	//将正整数positiveNumber转换为二进制的字符串
+	//灏嗘鏁存暟positiveNumber杞崲涓轰簩杩涘埗鐨勫瓧绗︿覆
 	public static String toBinayString(int positiveNumber)
 	{
 		String s = "";
